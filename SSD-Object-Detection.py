@@ -104,9 +104,8 @@ def detect_object(original_image):
             x1 = box[-2] * original_image_width / width
             y1 = box[-1] * original_image_height / height
             label_text = '{}: {:.2f}'.format(classes[int(box[0])], box[1])	# label text
-            label_text3 = 'x {0}: {1}'.format(x0, y0)	# label text
             cv2.rectangle(original_image, (int(x0), int(y0)), (int(x1), int(y1)), (255, 0, 0), 2)	# drwaing rectangle
-            cv2.putText(original_image, label_text3, (int(x0), int(y0)), cv2.FONT_HERSHEY_DUPLEX, 1, (231, 237, 243), 2, cv2.LINE_AA) # putting lable
+            cv2.putText(original_image, label_text, (int(x0), int(y0)), cv2.FONT_HERSHEY_DUPLEX, 1, (231, 237, 243), 2, cv2.LINE_AA) # putting lable
     print('*** {0} cars and {1} buses ***'.format(carro, busao))
     label_text2 = '*** {0} cars and {1} buses ***'.format(carro, busao)  # label text
     cv2.putText(original_image, label_text2, (134, 70), cv2.FONT_HERSHEY_DUPLEX, 1, (0, 0, 0), 2,
